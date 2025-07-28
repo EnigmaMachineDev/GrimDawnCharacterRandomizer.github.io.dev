@@ -1,0 +1,18 @@
+The and functionality of this application is not up to date with the style and functionality of my other randomizer applications I am working on building.
+
+Problems:
+1. The theme is incorrect, my other applications have a dark theme with green text.
+2. This app does not have reroll buttons to reroll specific parts of the randomized character.
+3. This app is all in one index.html file, it does not have seperation of concerns, it should be in seperate html, css, and javascript files.
+
+I want you to address all three of these problems in the following way using the up to date randomizer app (it has a different purpose, but I want to match the style of it).
+
+1. Please change the style to a dark theme with green text. Reference the example application and it's css file for an example of this theme.
+
+2. Add Reroll buttons to this application. 
+There should be a reroll button on the Focus Abilities section that rerolls the focus abilities and the weapon. It will need to do both since the weapon list can depend on the focus abilities. 
+There should also be a reroll button on weapon that rerolls the weapon based on the current compatible weapon list. 
+Class should have no reroll button because it would be redundant since the other sections depend on class.
+Make sure the style of the reroll buttons matches the style in ExampleApplication as well as the layout of the buttons. Each button should be in a fixed position at the far right of the container, and should not move when the text length changes in any section.
+
+3. Seperate the html, css, and javascript into their own files for easier maintainability. Again you can use ExampleApplication as an example of how to do this.
