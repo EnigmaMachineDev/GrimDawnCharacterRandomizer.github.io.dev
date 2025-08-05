@@ -18,6 +18,7 @@ body {
     align-items: flex-start;
     margin-top: 60px;
     margin-bottom: 60px;
+    height: 500px;
 }
 
 .content-wrapper {
