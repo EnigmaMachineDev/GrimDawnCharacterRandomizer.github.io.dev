@@ -7,6 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
@@ -25,6 +26,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 100%;
 }
 
 .container {
@@ -42,6 +44,8 @@ body {
 h1 {
     color: #66bb6a; /* Green */
     margin-bottom: 30px;
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+    line-height: 1.2;
 }
 
 button {
@@ -55,6 +59,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     margin-bottom: 30px;
+    min-height: 48px; /* Touch target minimum size */
 }
 
 button:hover {
@@ -70,10 +75,10 @@ button:active {
     padding: 20px;
     border-radius: 8px;
     text-align: left;
-    min-height: 300px;
+    min-height: 200px; /* Reduced for mobile */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
     align-items: flex-start;
     position: relative;
     width: 100%;
@@ -84,6 +89,7 @@ button:active {
     margin-bottom: 15px;
     width: 100%;
     position: relative;
+    padding-right: 50px; /* Space for reroll button */
 }
 
 .result-item:last-child {
@@ -95,23 +101,30 @@ button:active {
     color: #66bb6a;
     display: block;
     margin-bottom: 5px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 .result-value {
-    font-size: 1.1em;
+    font-size: clamp(1rem, 3.5vw, 1.1em);
     color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 ul {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
+    width: 100%;
 }
 
 li {
     padding: 8px 12px;
     border-radius: 4px;
     margin-top: 5px;
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .footer {
@@ -140,8 +153,8 @@ li {
 .reroll-button {
     background-color: #4a4a4a;
     color: #e0e0e0;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 8px 12px;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     border: none;
@@ -149,38 +162,230 @@ li {
     right: 0px;
     top: 50%;
     transform: translateY(-50%);
+    min-height: 36px; /* Touch target minimum */
+    min-width: 36px;
 }
 
 .reroll-button:hover {
     background-color: #5a5a5a;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 600px) {
+/* Mobile Portrait Orientation - Primary Fix */
+@media (max-width: 768px) and (orientation: portrait) {
     body {
-        padding: 10px;
+        padding: 15px;
+        min-height: 100vh;
+        min-height: 100dvh;
+        justify-content: flex-start;
     }
-
+    
+    .main-wrapper {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
     .container {
-        padding: 20px;
+        padding: 20px 15px;
+        max-width: 100%;
+        margin: 0;
     }
-
+    
     h1 {
-        font-size: 1.5em;
+        font-size: 1.4rem;
+        margin-bottom: 20px;
     }
-
+    
     button {
-        padding: 12px 24px;
+        padding: 12px 20px;
         font-size: 16px;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 280px;
     }
-
+    
     .result-container {
         padding: 15px;
-        min-height: 250px;
+        min-height: auto; /* Let content determine height */
     }
-
+    
+    .result-item {
+        padding-right: 45px;
+        margin-bottom: 20px;
+    }
+    
+    .result-label {
+        font-size: 0.95rem;
+    }
+    
     .result-value {
-        font-size: 1em;
+        font-size: 1rem;
+    }
+    
+    li {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+    
+    .reroll-button {
+        padding: 6px 10px;
+        font-size: 12px;
+        min-height: 32px;
+        min-width: 32px;
+    }
+    
+    .footer {
+        margin-top: 20px;
+        font-size: 0.8em;
     }
 }
 
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px 10px;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .result-container {
+        padding: 12px;
+    }
+    
+    .result-item {
+        margin-bottom: 15px;
+        padding-right: 40px;
+    }
+    
+    .result-label {
+        font-size: 0.9rem;
+    }
+    
+    .result-value {
+        font-size: 0.95rem;
+    }
+    
+    li {
+        padding: 5px 8px;
+        font-size: 0.85rem;
+    }
+    
+    .reroll-button {
+        padding: 5px 8px;
+        font-size: 11px;
+        min-height: 28px;
+        min-width: 28px;
+    }
+}
+
+/* Tablet and Small Desktop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        max-width: 600px;
+        padding: 35px 45px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 650px;
+        padding: 40px 50px;
+    }
+}
+
+/* Landscape Mobile - Optimize for horizontal space */
+@media (max-width: 768px) and (orientation: landscape) {
+    body {
+        padding: 10px 20px;
+        justify-content: center;
+    }
+    
+    .main-wrapper {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .container {
+        padding: 20px 25px;
+        max-width: 90%;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .result-container {
+        min-height: 180px;
+        padding: 15px;
+    }
+    
+    .result-item {
+        margin-bottom: 12px;
+    }
+}
+
+/* Very small screens - aggressive optimization */
+@media (max-width: 320px) {
+    body {
+        padding: 8px;
+    }
+    
+    .container {
+        padding: 12px 8px;
+    }
+    
+    h1 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    button {
+        padding: 8px 12px;
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+    
+    .result-container {
+        padding: 10px;
+    }
+    
+    .result-item {
+        margin-bottom: 12px;
+        padding-right: 35px;
+    }
+    
+    .result-label {
+        font-size: 0.85rem;
+    }
+    
+    .result-value {
+        font-size: 0.9rem;
+    }
+    
+    li {
+        padding: 4px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .reroll-button {
+        padding: 4px 6px;
+        font-size: 10px;
+        min-height: 24px;
+        min-width: 24px;
+        right: 2px;
+    }
+}
