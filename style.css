@@ -86,9 +86,9 @@ button:active {
 
 .result-item {
     margin-bottom: 15px;
-    width: calc(100% - 40px); /* Leave space for button */
+    width: 100%;
     position: relative;
-    padding-right: 10px; /* Small padding */
+    padding-right: 45px; /* Space for reroll button */
 }
 
 .result-item:last-child {
@@ -158,7 +158,7 @@ li {
     cursor: pointer;
     border: none;
     position: absolute;
-    right: calc(100% + 5px);
+    right: 8px;
     top: 0px;
     width: 32px;
     height: 32px;
@@ -212,8 +212,8 @@ li {
     
     .result-item {
         margin-bottom: 18px;
-        width: calc(100% - 35px);
-        padding-right: 8px;
+        width: 100%;
+        padding-right: 40px;
     }
     
     .result-label {
@@ -237,7 +237,7 @@ li {
         height: 28px !important;
         padding: 4px !important;
         font-size: 12px !important;
-        right: calc(100% + 3px) !important;
+        right: 8px !important;
         top: 0px !important;
         min-width: 28px !important;
         min-height: 28px !important;
