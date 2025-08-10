@@ -87,13 +87,8 @@ button:active {
 .result-item {
     margin-bottom: 15px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.result-content {
-    flex-grow: 1;
+    position: relative;
+    padding-right: 45px; /* Space for reroll button */
 }
 
 .result-item:last-child {
@@ -162,13 +157,14 @@ li {
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    position: absolute;
+    right: 8px;
+    top: 0px;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10px; /* Added margin */
-    flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 .reroll-button:hover {
@@ -217,6 +213,7 @@ li {
     .result-item {
         margin-bottom: 18px;
         width: 100%;
+        padding-right: 40px;
     }
     
     .result-label {
@@ -236,14 +233,16 @@ li {
     }
     
     .reroll-button {
-        width: 28px;
-        height: 28px;
-        padding: 4px;
-        font-size: 12px;
-        min-width: 28px;
-        min-height: 28px;
-        max-width: 28px;
-        max-height: 28px;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 4px !important;
+        font-size: 12px !important;
+        right: 8px !important;
+        top: 0px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        max-width: 28px !important;
+        max-height: 28px !important;
     }
     
     .footer {
@@ -280,6 +279,7 @@ li {
     
     .result-item {
         margin-bottom: 15px;
+        padding-right: 35px;
     }
     
     .result-label {
@@ -296,14 +296,16 @@ li {
     }
     
     .reroll-button {
-        width: 24px;
-        height: 24px;
-        padding: 3px;
-        font-size: 11px;
-        min-width: 24px;
-        min-height: 24px;
-        max-width: 24px;
-        max-height: 24px;
+        width: 24px !important;
+        height: 24px !important;
+        padding: 3px !important;
+        font-size: 11px !important;
+        right: 5px !important;
+        top: 0px !important;
+        min-width: 24px !important;
+        min-height: 24px !important;
+        max-width: 24px !important;
+        max-height: 24px !important;
     }
 }
 
@@ -353,17 +355,20 @@ li {
     .result-item {
         margin-bottom: 12px;
         width: 100%;
+        padding-right: 40px;
     }
     
     .reroll-button {
-        width: 28px;
-        height: 28px;
-        padding: 4px;
-        font-size: 12px;
-        min-width: 28px;
-        min-height: 28px;
-        max-width: 28px;
-        max-height: 28px;
+        width: 28px !important;
+        height: 28px !important;
+        padding: 4px !important;
+        font-size: 12px !important;
+        right: 8px !important;
+        top: 0px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        max-width: 28px !important;
+        max-height: 28px !important;
     }
 }
 
@@ -395,6 +400,7 @@ li {
     
     .result-item {
         margin-bottom: 12px;
+        padding-right: 33px;
     }
     
     .result-label {
@@ -415,5 +421,33 @@ li {
         height: 22px;
         padding: 2px;
         font-size: 10px;
+        right: calc(100% + 3px);
+        top: 0px;
+    }
+}
+
+/* High-resolution screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* No specific high-res styles needed for this design */
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .reroll-button {
+        position: static;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+
+    .result-label,
+    .result-value {
+        flex-grow: 1;
     }
 }
