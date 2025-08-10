@@ -236,16 +236,14 @@ li {
     }
     
     .reroll-button {
-        width: 28px !important;
-        height: 28px !important;
-        padding: 4px !important;
-        font-size: 12px !important;
-        right: 8px !important;
-        top: 0px !important;
-        min-width: 28px !important;
-        min-height: 28px !important;
-        max-width: 28px !important;
-        max-height: 28px !important;
+        width: 28px;
+        height: 28px;
+        padding: 4px;
+        font-size: 12px;
+        min-width: 28px;
+        min-height: 28px;
+        max-width: 28px;
+        max-height: 28px;
     }
     
     .footer {
@@ -298,16 +296,14 @@ li {
     }
     
     .reroll-button {
-        width: 24px !important;
-        height: 24px !important;
-        padding: 3px !important;
-        font-size: 11px !important;
-        right: 5px !important;
-        top: 0px !important;
-        min-width: 24px !important;
-        min-height: 24px !important;
-        max-width: 24px !important;
-        max-height: 24px !important;
+        width: 24px;
+        height: 24px;
+        padding: 3px;
+        font-size: 11px;
+        min-width: 24px;
+        min-height: 24px;
+        max-width: 24px;
+        max-height: 24px;
     }
 }
 
@@ -360,16 +356,14 @@ li {
     }
     
     .reroll-button {
-        width: 28px !important;
-        height: 28px !important;
-        padding: 4px !important;
-        font-size: 12px !important;
-        right: 8px !important;
-        top: 0px !important;
-        min-width: 28px !important;
-        min-height: 28px !important;
-        max-width: 28px !important;
-        max-height: 28px !important;
+        width: 28px;
+        height: 28px;
+        padding: 4px;
+        font-size: 12px;
+        min-width: 28px;
+        min-height: 28px;
+        max-width: 28px;
+        max-height: 28px;
     }
 }
 
@@ -421,7 +415,5 @@ li {
         height: 22px;
         padding: 2px;
         font-size: 10px;
-        right: calc(100% + 3px);
-        top: 0px;
     }
 }
