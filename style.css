@@ -421,7 +421,7 @@ li {
         height: 22px;
         padding: 2px;
         font-size: 10px;
-        right: calc(100% + 3px);
+        right: 5px;
         top: 0px;
     }
 }
@@ -429,24 +429,4 @@ li {
 /* High-resolution screens */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     /* No specific high-res styles needed for this design */
-}
-
-@media (min-width: 769px) {
-    .result-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-right: 0;
-    }
-
-    .reroll-button {
-        position: static;
-        margin-left: 10px;
-        flex-shrink: 0;
-    }
-
-    .result-content-wrapper {
-        flex-grow: 1;
-        text-align: left;
-    }
 }
