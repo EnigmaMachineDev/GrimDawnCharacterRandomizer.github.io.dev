@@ -87,18 +87,12 @@ button:active {
 .result-item {
     margin-bottom: 15px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+    padding-right: 45px; /* Space for reroll button */
 }
 
 .result-item:last-child {
     margin-bottom: 0;
-}
-
-.result-text-content {
-    flex-grow: 1;
-    text-align: left;
 }
 
 .result-label {
@@ -163,13 +157,14 @@ li {
     border-radius: 5px;
     cursor: pointer;
     border: none;
+    position: absolute;
+    right: 8px;
+    top: 0px;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10px;
-    flex-shrink: 0;
 }
 
 .reroll-button:hover {
@@ -238,13 +233,12 @@ li {
     }
     
     .reroll-button {
-        position: absolute;
-        right: 8px;
-        top: 0px;
         width: 28px !important;
         height: 28px !important;
         padding: 4px !important;
         font-size: 12px !important;
+        right: 8px !important;
+        top: 0px !important;
         min-width: 28px !important;
         min-height: 28px !important;
         max-width: 28px !important;
@@ -302,13 +296,12 @@ li {
     }
     
     .reroll-button {
-        position: absolute;
-        right: 5px;
-        top: 0px;
         width: 24px !important;
         height: 24px !important;
         padding: 3px !important;
         font-size: 11px !important;
+        right: 5px !important;
+        top: 0px !important;
         min-width: 24px !important;
         min-height: 24px !important;
         max-width: 24px !important;
@@ -366,13 +359,12 @@ li {
     }
     
     .reroll-button {
-        position: absolute;
-        right: 8px;
-        top: 0px;
         width: 28px !important;
         height: 28px !important;
         padding: 4px !important;
         font-size: 12px !important;
+        right: 8px !important;
+        top: 0px !important;
         min-width: 28px !important;
         min-height: 28px !important;
         max-width: 28px !important;
@@ -425,13 +417,12 @@ li {
     }
     
     .reroll-button {
-        position: absolute;
-        right: 5px;
-        top: 0px;
         width: 22px;
         height: 22px;
         padding: 2px;
         font-size: 10px;
+        right: calc(100% + 3px);
+        top: 0px;
     }
 }
 
@@ -440,4 +431,22 @@ li {
     /* No specific high-res styles needed for this design */
 }
 
+@media (min-width: 769px) {
+    .result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 0;
+    }
 
+    .reroll-button {
+        position: static;
+        margin-left: 10px;
+        flex-shrink: 0;
+    }
+
+    .result-content-wrapper {
+        flex-grow: 1;
+        text-align: left;
+    }
+}
