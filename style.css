@@ -448,6 +448,11 @@ li {
 
     .result-label,
     .result-value {
+        flex-grow: 0;
+    }
+
+    .result-text-content {
         flex-grow: 1;
+        text-align: left;
     }
 }
